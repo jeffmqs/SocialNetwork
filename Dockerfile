@@ -1,11 +1,12 @@
 
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.8.8-eclipse-temurin-17 AS build
 
 
 WORKDIR /app
 
 
 COPY pom.xml .
+
 
 RUN mvn dependency:go-offline
 
@@ -20,6 +21,7 @@ FROM openjdk:17-jdk-slim
 
 
 WORKDIR /app
+
 
 EXPOSE 8082
 
